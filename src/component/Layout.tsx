@@ -1,0 +1,16 @@
+import NavigationBar from "./NavigationBar";
+import { Outlet } from "react-router-dom";
+
+export function Layout() {
+  return (
+    <>
+      <h1>CityHexScope</h1>
+      <NavigationBar />
+      <main>
+        <Outlet />
+      </main>
+    </>
+  );
+}
+
+export default Layout;

@@ -39,7 +39,7 @@ const MapComponent: React.FC<MapProps> = ({ coordinates, showSymbol }) => {
 
       mapRef.current.on("load", () => {
         // Toggle text visibility based on the prop
-        if (showSymbol) {
+        if (showSymbol === false) {
           console.log(showSymbol);
           const layers = mapRef.current?.getStyle().layers;
 

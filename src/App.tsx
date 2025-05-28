@@ -1,14 +1,19 @@
-import { useState } from "react";
-import MapComponent from "./component/MapComponent";
+import Layout from "./component/Layout";
+import Home from "./page/Home";
+import FootballStadium from "./page/FootballStadium";
+
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [showSymbol, setShowSymbol] = useState(true);
-
   return (
-    <>
-      <h1>CityHexScope</h1>
-      <MapComponent coordinates={[-0.889, 52.231]} showSymbol={showSymbol} />
-    </>
+    <HashRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/FootballStadium" element={<FootballStadium />} />
+        </Route>
+      </Routes>
+    </HashRouter>
   );
 }
 
