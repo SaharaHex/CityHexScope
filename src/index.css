@@ -26,6 +26,10 @@ h2 {
   text-align: center;
 }
 
+p {
+  font-size: 20px;
+}
+
 .hexagon {
   height: 200px;
   aspect-ratio: 1/cos(30deg);
@@ -38,4 +42,8 @@ h2 {
   color: #000; /* Black text */
   font-weight: bold; /* Make it stand out */
   border-radius: 5px; /* Add rounded corners */
+}
+
+.life--lost {
+  opacity: 0;
 }

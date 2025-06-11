@@ -4,7 +4,9 @@ import { Outlet } from "react-router-dom";
 export function Layout() {
   return (
     <>
-      <h1>CityHexScope</h1>
+      <h1>
+        City<em>Hex</em>Scope
+      </h1>
       <NavigationBar />
       <main>
         <Outlet />
