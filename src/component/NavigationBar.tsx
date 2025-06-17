@@ -27,11 +27,11 @@ const NavigationBar = () => {
             <li className="nav-item">
               <Link
                 className={`nav-link ${
-                  location.pathname === "/FootballStadium" ? "active" : ""
+                  location.pathname === "/UKFootballStadium" ? "active" : ""
                 }`}
-                to="/FootballStadium"
+                to="/UKFootballStadium"
               >
-                Football Stadium
+                UK Football Stadium
               </Link>
             </li>
           </ul>

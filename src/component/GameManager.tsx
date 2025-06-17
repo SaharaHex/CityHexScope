@@ -4,8 +4,10 @@ import { Location } from "../class/Location";
 import MapComponent from "./MapComponent";
 import ReactConfetti from "react-confetti";
 
-interface FootballStadiumManagerProps {
+interface GameManagerProps {
   initialEntities: Location[];
+  topicName: String;
+  topicIcon: String;
 }
 
 interface State {
@@ -59,8 +61,10 @@ const reducer = (
   }
 };
 
-const FootballStadiumManager: React.FC<FootballStadiumManagerProps> = ({
+const GameManager: React.FC<GameManagerProps> = ({
   initialEntities,
+  topicName,
+  topicIcon,
 }) => {
   const { entities, addEntity } = useLocation();
   const isInitialized = useRef(false);
@@ -210,7 +214,7 @@ const FootballStadiumManager: React.FC<FootballStadiumManagerProps> = ({
                           transition: "opacity 0.4s ease",
                         }}
                       >
-                        ⚽
+                        {topicIcon}
                       </span>
                     ))}
                   </div>
@@ -285,9 +289,10 @@ const FootballStadiumManager: React.FC<FootballStadiumManagerProps> = ({
           <p>You've reached the end of the list, how did you score.</p>
           <div>
             <p>Total Locations: {entities.length}</p>
-            <p>Success Rate: {successRate}% (Max 100%)</p>
-            <p>Correct Answers: {state.points}</p>
-            <p>Attempts: {state.attempts}</p>
+            <p>🏆Success Rate: {successRate}% (Max 100%)</p>
+            <p>✔️Correct Answers: {state.points}</p>
+            <p>🎯Attempts: {state.attempts}</p>
+            <p>Topic: {topicName}</p>
           </div>
         </div>
       )}
@@ -295,4 +300,4 @@ const FootballStadiumManager: React.FC<FootballStadiumManagerProps> = ({
   );
 };
 
-export default FootballStadiumManager;
+export default GameManager;

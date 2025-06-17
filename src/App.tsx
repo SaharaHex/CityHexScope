@@ -1,6 +1,6 @@
 import Layout from "./component/Layout";
 import Home from "./page/Home";
-import FootballStadium from "./page/FootballStadium";
+import UKFootballStadium from "./page/UKFootballStadium";
 
 import { HashRouter, Routes, Route } from "react-router-dom";
 
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/FootballStadium" element={<FootballStadium />} />
+          <Route path="/UKFootballStadium" element={<UKFootballStadium />} />
         </Route>
       </Routes>
     </HashRouter>
