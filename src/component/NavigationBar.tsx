@@ -1,3 +1,4 @@
+// menu and navigation bar
 import { Link, useLocation } from "react-router-dom";
 
 const NavigationBar = () => {

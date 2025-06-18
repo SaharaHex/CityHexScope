@@ -1,3 +1,4 @@
+// get map locations via tiles.openfreemap.org
 import React, { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 
