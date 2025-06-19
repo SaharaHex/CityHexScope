@@ -15,7 +15,7 @@ export interface State {
   showConfetti: boolean;
 }
 
-export interface FootballStadiumManagerProps {
+export interface GameManagerProps {
   initialEntities: Location[];
   topicName: string;
   topicIcon: string;

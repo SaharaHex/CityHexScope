@@ -9,7 +9,7 @@ import StatsDisplay from "./StatsDisplay";
 import ConfettiOverlay from "./ConfettiOverlay";
 import { useGameManager } from "../hook/useGameManager";
 
-export default function FootballStadiumManager({
+export default function GameManager({
   initialEntities,
   topicName,
   topicIcon,
