@@ -1,6 +1,7 @@
 // get map locations via tiles.openfreemap.org
 import React, { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 interface MapProps {
   coordinates: [number, number]; // Define props for map center coordinates
