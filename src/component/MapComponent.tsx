@@ -30,6 +30,19 @@ const MapComponent: React.FC<MapProps> = ({ coordinates, showSymbol }) => {
       mapRef.current.doubleClickZoom.disable();
       mapRef.current.touchZoomRotate.disable();
 
+      // Listen for missing images
+      mapRef.current.on("styleimagemissing", (e) => {
+        // Create a transparent 1x1 pixel image using ImageData
+        const transparentImage = new ImageData(
+          new Uint8ClampedArray([0, 0, 0, 0]),
+          1,
+          1
+        );
+        if (!mapRef.current?.hasImage(e.id)) {
+          mapRef.current?.addImage(e.id, transparentImage);
+        }
+      });
+
       // Rotate function
       function rotateMap() {
         if (mapRef.current) {
@@ -41,7 +54,6 @@ const MapComponent: React.FC<MapProps> = ({ coordinates, showSymbol }) => {
       mapRef.current.on("load", () => {
         // Toggle text visibility based on the prop
         if (showSymbol === false) {
-          console.log(showSymbol);
           const layers = mapRef.current?.getStyle().layers;
 
           layers?.forEach((layer) => {
