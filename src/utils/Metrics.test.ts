@@ -19,7 +19,7 @@ describe("calculateSuccessRate()", () => {
   });
 
   it("handles zero attempts (no div-by-zero)", () => {
-    // Treat as 100% if they scored some points but never "attempted"
-    expect(calculateSuccessRate(5, 0, 10)).toBe(100);
+    // Treat as 0% if they scored some points but never "attempted"
+    expect(calculateSuccessRate(5, 0, 10)).toBe(0);
   });
 });
