@@ -2,7 +2,7 @@ import { useState } from "react";
 import MapComponent from "../component/MapComponent";
 
 function Home() {
-  const [showSymbol, setShowSymbol] = useState(true);
+  const [showSymbol] = useState(true);
 
   return (
     <>

@@ -35,6 +35,16 @@ const NavigationBar = () => {
                 UK Football Stadium
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${
+                  location.pathname === "/WorldFootballStadium" ? "active" : ""
+                }`}
+                to="/WorldFootballStadium"
+              >
+                World Football Stadium
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
