@@ -8,18 +8,27 @@ import NextButton from "./NextButton";
 import StatsDisplay from "./StatsDisplay";
 import ConfettiOverlay from "./ConfettiOverlay";
 import { useGameManager } from "../hook/useGameManager";
+import Hints from "./Hints";
 
 export default function GameManager({
   initialEntities,
   topicName,
   topicIcon,
+  topicHints,
 }: {
   initialEntities: any[];
   topicName: string;
   topicIcon: string;
+  topicHints: boolean;
 }) {
-  const { state, handleClick, refresh, progressPercent, successRate } =
-    useGameManager(initialEntities);
+  const {
+    state,
+    handleClick,
+    refresh,
+    progressPercent,
+    bumpHintCount,
+    successRate,
+  } = useGameManager(initialEntities);
 
   const currentPosition = state.shownIds.length;
   const maxAttempts = 3;
@@ -35,6 +44,8 @@ export default function GameManager({
           topic={topicName}
           points={state.points}
           attempts={state.attempts}
+          hints={state.totalHints}
+          suggestions={topicHints}
           successRate={successRate}
         />
       </div>
@@ -113,6 +124,17 @@ export default function GameManager({
                   : [0, 0]
               }
             />
+            {topicHints && state.randomEntity?.hint && (
+              <Hints
+                hint={state.randomEntity.hint}
+                locationId={state.randomEntity.id}
+                onReveal={() => {
+                  // this will only run once per location, no matter how many times
+                  // they open/close the hint
+                  bumpHintCount();
+                }}
+              />
+            )}
           </div>
         </div>
       </div>

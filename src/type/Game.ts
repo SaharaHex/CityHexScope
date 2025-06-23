@@ -13,12 +13,14 @@ export interface State {
   totalLocations: number;
   selectedIds: number[];
   showConfetti: boolean;
+  totalHints: number;
 }
 
 export interface GameManagerProps {
   initialEntities: Location[];
   topicName: string;
   topicIcon: string;
+  topicHints: boolean;
 }
 
 export type Action =
@@ -34,4 +36,5 @@ export type Action =
   | { type: "SET_SELECTED"; payload: number } // Store clicked button IDs
   | { type: "CLEAR_SELECTED" } // Reset selected buttons
   | { type: "TOGGLE_NEXT"; payload: boolean } // Disabled Next button
-  | { type: "TOGGLE_CONFETTI"; payload: boolean }; // Confetti for Result page
+  | { type: "TOGGLE_CONFETTI"; payload: boolean } // Confetti for Result page
+  | { type: "UPDATE_TOTALHINT" }; // Number of Hints used

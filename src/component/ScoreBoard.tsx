@@ -4,6 +4,8 @@ interface Props {
   topic: string;
   points: number;
   attempts: number;
+  hints: number;
+  suggestions: boolean;
   successRate: number;
 }
 
@@ -12,6 +14,8 @@ export default function ScoreBoard({
   topic,
   points,
   attempts,
+  hints,
+  suggestions,
   successRate,
 }: Props) {
   const getResultText = (): string => {
@@ -25,8 +29,10 @@ export default function ScoreBoard({
       return "👍 Getting there!";
     } else if (successRate > 30) {
       return "😕 Need improving";
-    } else {
+    } else if (successRate > 10) {
       return "🤔 Well you tried";
+    } else {
+      return "😬 Something when wrong";
     }
   };
 
@@ -35,7 +41,9 @@ export default function ScoreBoard({
       <p>🌐 Total Locations: {locations}</p>
       <p>📌 Topic: {topic}</p>
       <p>✔️ Correct Answers: {points}</p>
-      <p>🎯 Attempts: {attempts}</p>
+      <p>
+        🎯 Attempts: {attempts} {suggestions && <span> 💡 Hints: {hints}</span>}
+      </p>
       <p>🏆 Success Rate: {successRate}%</p>
       <h3>Result: {getResultText()}</h3>
     </div>

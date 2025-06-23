@@ -25,6 +25,7 @@ function UKFootballStadium() {
         initialEntities={ukFootballStadiums}
         topicName={"UK Football Stadium"}
         topicIcon={"⚽"}
+        topicHints={false}
       ></GameManager>
     </>
   );

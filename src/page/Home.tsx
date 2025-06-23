@@ -16,7 +16,7 @@ function Home() {
           <div className="row align-items-start">
             {/* 1️⃣ left: attempts + buttons */}
             <div className="col text-start">
-              <p>🌍 How to Play</p>
+              <p>🧩 How to Play</p>
               <ul className="list-group">
                 <li className="list-group-item">
                   🧭 <strong>Pick a topic</strong> from the menu above
@@ -44,7 +44,11 @@ function Home() {
                   📊 Check your <strong>progress and stats</strong> on the right
                 </li>
                 <li className="list-group-item">
-                  🏁 Once all locations are completed, you'll see your{" "}
+                  💡 Need a <strong>clue?</strong> Look out for hint buttons on
+                  some topics!
+                </li>
+                <li className="list-group-item">
+                  🏁 Once all locations are completed, you'll see your
                   <strong>Success Rate</strong> on the results page
                 </li>
                 <li className="list-group-item">
@@ -54,7 +58,10 @@ function Home() {
             </div>
 
             {/* 2️⃣ center: map */}
-            <div className="col">
+            <div
+              className="col d-flex align-items-center justify-content-center"
+              style={{ height: "51vh" }}
+            >
               <MapComponent
                 coordinates={[0.0032134873187627607, 51.50299894195837]} // the Millennium Dome
                 showSymbol={showSymbol}

@@ -23,7 +23,7 @@ const reducer = (state: State, action: Action): State => {
       return { ...state, attemptsPerRound: state.attemptsPerRound + 1 };
     case "RESET_ATTEMPTS_PER_ROUND": // Reset attempts per location
       return { ...state, attemptsPerRound: 0 };
-    case "SET_TOTAL": // Total number of locations. ?????todo
+    case "SET_TOTAL": // Total number of locations.
       return { ...state, totalLocations: action.payload };
     case "SET_SELECTED": // Store clicked button IDs
       return { ...state, selectedIds: [...state.selectedIds, action.payload] };
@@ -33,6 +33,8 @@ const reducer = (state: State, action: Action): State => {
       return { ...state, nextDisabled: action.payload };
     case "TOGGLE_CONFETTI": // Confetti for Result page
       return { ...state, showConfetti: action.payload };
+    case "UPDATE_TOTALHINT": // Number of Hints used
+      return { ...state, totalHints: state.totalHints + 1 };
     default:
       return state;
   }
@@ -53,6 +55,7 @@ export function useGameManager(initialEntities: Location[]) {
     totalLocations: 0,
     selectedIds: [],
     showConfetti: false,
+    totalHints: 0,
   });
 
   // 1️⃣ initialize entities on first mount.
@@ -118,6 +121,9 @@ export function useGameManager(initialEntities: Location[]) {
     }
   };
 
+  // expose this helper
+  const bumpHintCount = () => dispatch({ type: "UPDATE_TOTALHINT" });
+
   // 4️⃣ calculate progress percentage, and success rate
   const progressPercent = state.totalLocations
     ? Math.round((state.shownIds.length / state.totalLocations) * 100)
@@ -133,6 +139,7 @@ export function useGameManager(initialEntities: Location[]) {
     refresh,
     handleClick,
     progressPercent,
+    bumpHintCount,
     successRate,
   };
 }
