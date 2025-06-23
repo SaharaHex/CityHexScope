@@ -99,6 +99,7 @@ export default function GameManager({
                   state.randomEntity.coordinates[1],
                 ]}
                 showSymbol={state.randomEntity.showSymbol}
+                zoom={state.randomEntity.zoom}
               />
             )}
           </div>

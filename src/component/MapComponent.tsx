@@ -6,9 +6,14 @@ import "maplibre-gl/dist/maplibre-gl.css";
 interface MapProps {
   coordinates: [number, number]; // Define props for map center coordinates
   showSymbol: boolean; // Object to toggle layers on/off
+  zoom: number;
 }
 
-const MapComponent: React.FC<MapProps> = ({ coordinates, showSymbol }) => {
+const MapComponent: React.FC<MapProps> = ({
+  coordinates,
+  showSymbol,
+  zoom,
+}) => {
   const mapContainerRef = useRef(null);
   const mapRef = useRef<maplibregl.Map | null>(null);
 
@@ -18,7 +23,7 @@ const MapComponent: React.FC<MapProps> = ({ coordinates, showSymbol }) => {
         container: mapContainerRef.current!,
         style: "https://tiles.openfreemap.org/styles/liberty",
         center: coordinates,
-        zoom: 16,
+        zoom: zoom,
         pitch: 60,
         bearing: 0,
       });

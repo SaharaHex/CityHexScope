@@ -32,7 +32,7 @@ export default function ScoreBoard({
     } else if (successRate > 10) {
       return "🤔 Well you tried";
     } else {
-      return "😬 Something when wrong";
+      return "😬 Something went wrong";
     }
   };
 

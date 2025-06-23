@@ -12,6 +12,7 @@ const initialEntities: Location[] = [
     name: "Wembley Stadium",
     coordinates: [-0.279672, 51.555973],
     showSymbol: false,
+    zoom: 16,
     hint: "No hint available",
   },
   {
@@ -19,6 +20,7 @@ const initialEntities: Location[] = [
     name: "Old Trafford",
     coordinates: [-2.291384, 53.463062],
     showSymbol: false,
+    zoom: 16,
     hint: "No hint available",
   },
   {
@@ -26,6 +28,7 @@ const initialEntities: Location[] = [
     name: "Tottenham Hotspur Stadium",
     coordinates: [-0.06602, 51.604249],
     showSymbol: false,
+    zoom: 16,
     hint: "No hint available",
   },
 ];
@@ -102,6 +105,7 @@ describe("useGameManager (synchronous click and check output stats)", () => {
       name: "Wrong",
       coordinates: [0, 0],
       showSymbol: false,
+      zoom: 16,
       hint: "No hint available",
     };
 
@@ -126,6 +130,7 @@ describe("useGameManager (synchronous click and check output stats)", () => {
       name: "Wrong",
       coordinates: [0, 0],
       showSymbol: false,
+      zoom: 16,
       hint: "No hint available",
     };
 

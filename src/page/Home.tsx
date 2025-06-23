@@ -65,6 +65,7 @@ function Home() {
               <MapComponent
                 coordinates={[0.0032134873187627607, 51.50299894195837]} // the Millennium Dome
                 showSymbol={showSymbol}
+                zoom={16}
               />
             </div>
 
