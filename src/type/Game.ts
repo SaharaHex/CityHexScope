@@ -32,7 +32,7 @@ export type Action =
   | { type: "UPDATE_ATTEMPTS" } // and counting attempts
   | { type: "UPDATE_ATTEMPTS_PER_ROUND" } // Attempts per location (round)
   | { type: "RESET_ATTEMPTS_PER_ROUND" } // Reset attempts per location
-  | { type: "SET_TOTAL"; payload: number } // Total number of locations. ?????todo
+  | { type: "SET_TOTAL"; payload: number } // Total number of locations.
   | { type: "SET_SELECTED"; payload: number } // Store clicked button IDs
   | { type: "CLEAR_SELECTED" } // Reset selected buttons
   | { type: "TOGGLE_NEXT"; payload: boolean } // Disabled Next button

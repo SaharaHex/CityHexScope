@@ -2,6 +2,7 @@ import Layout from "./component/Layout";
 import Home from "./page/Home";
 import UKFootballStadium from "./page/UKFootballStadium";
 import WorldFootballStadium from "./page/WorldFootballStadium";
+import EuropeanLandmark from "./page/EuropeanLandmark";
 
 import { HashRouter, Routes, Route } from "react-router-dom";
 
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/EuropeanLandmark" element={<EuropeanLandmark />} />
           <Route path="/UKFootballStadium" element={<UKFootballStadium />} />
           <Route
             path="/WorldFootballStadium"
