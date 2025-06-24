@@ -48,7 +48,7 @@ function Home() {
                   some topics!
                 </li>
                 <li className="list-group-item">
-                  🏁 Once all locations are completed, you'll see your
+                  🏁 Once all locations are completed, you'll see your{" "}
                   <strong>Success Rate</strong> on the results page
                 </li>
                 <li className="list-group-item">
@@ -89,7 +89,6 @@ function Home() {
                 Explore more projects and challenges by SaharaHex on the
                 developer blog: <a href="https://saharahex.uk/">saharahex.uk</a>
               </p>
-              <hr />
               <a href="https://saharahex.uk/">
                 <img
                   src="https://saharahex.uk/wp-content/uploads/2025/02/saharahexy-1.png"
@@ -97,6 +96,10 @@ function Home() {
                   alt="Responsive image"
                 ></img>
               </a>
+              <hr />
+              <footer className="footer-text">
+                Version 1.0 Beta (Jun 2025)
+              </footer>
             </div>
           </div>
         </div>

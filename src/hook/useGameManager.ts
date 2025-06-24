@@ -7,7 +7,7 @@ import { calculateSuccessRate } from "../utils/Metrics";
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case "SET_RANDOM":
+    case "SET_RANDOM": // Randomize the locations
       return { ...state, randomEntity: action.payload };
     case "UPDATE_PROGRESS": // Track IDs that have already been shown as random selections.
       return { ...state, shownIds: [...state.shownIds, action.payload] };
@@ -110,14 +110,15 @@ export function useGameManager(initialEntities: Location[]) {
       dispatch({ type: "TOGGLE_BUTTONS", payload: true }); // off buttons selection
       dispatch({ type: "TOGGLE_NEXT", payload: true }); // re-enable
       setTimeout(refresh, 1500); // add delay for smoother transition
-    } else {
-      dispatch({ type: "SET_MESSAGE", payload: "❌ Incorrect!" });
     }
     // move to next location ONLY after three attempts
-    if (state.attemptsPerRound + 1 >= 3) {
+    else if (state.attemptsPerRound + 1 >= 3) {
+      dispatch({ type: "SET_MESSAGE", payload: "❌ Incorrect!" });
       dispatch({ type: "TOGGLE_NEXT", payload: true }); // re-enable
       dispatch({ type: "TOGGLE_BUTTONS", payload: true }); // disable now
       setTimeout(refresh, 1500); // add delay for smoother transition
+    } else {
+      dispatch({ type: "SET_MESSAGE", payload: "❌ Incorrect!" });
     }
   };
 

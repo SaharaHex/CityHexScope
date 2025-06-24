@@ -30,6 +30,11 @@ p {
   font-size: 20px;
 }
 
+.footer-text {
+  color: gray;
+  text-align: center;
+}
+
 .hexagon {
   height: 200px;
   aspect-ratio: 1/cos(30deg);
