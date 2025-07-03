@@ -7,4 +7,4 @@ Used Vitest, for testing the hook logic and calculating the success rate. The ap
 
 ## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/)
+- [VS Code](https://code.visualstudio.com/) + [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
